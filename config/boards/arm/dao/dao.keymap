@@ -20,7 +20,7 @@
 
                 default_layer {
                         bindings = <
-  &none   &kp TAB   &mt KP_N1 Q   &mt KP_N2 W   &mt KP_N3 E   &mt KP_N4 R   &mt KP_N5 T    &mt HASH Y      &mt PRCNT U     &mt PIPE I       &mt AMPS O       &mt GRAVE P      &mt EQUAL UNDER   &none
+  &none   &kp TAB   &mt KP_N1 A   &mt KP_N2 W   &mt KP_N3 E   &mt KP_N4 R   &mt KP_N5 T    &mt HASH Y      &mt PRCNT U     &mt PIPE I       &mt AMPS O       &mt GRAVE P      &mt EQUAL UNDER   &none
           &kp BSPC  &mt KP_N6 A   &mt KP_N7 S   &mt KP_N8 D   &mt KP_N9 F   &mt KP_N0 G    &kp H           &kp J           &kp K            &kp L            &mt SEMI COLON   &kp ESC
           &kp DEL   &mt TILDE Z   &mt AT X      &mt STAR C    &mt MINUS V   &mt PLUS B     &mt CARET N     &mt DLLR M      &mt QMARK COMMA  &mt EXCL DOT     &mt BSLH FSLH    &mt DQT APOS
                                                 &kp LALT      &kp LSHFT     &lt LSHFT SPACE  &lt LSHFT RET     &kp LCTRL       &kp LMETA
