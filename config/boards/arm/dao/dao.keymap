@@ -32,7 +32,7 @@
                         bindings = <
   &none   &trans   &kp KP_N1     &kp KP_N2     &kp KP_N3      &kp KP_N4     &kp KP_N5      &kp C_VOL_DN    &kp C_VOL_UP    &kp C_BRI_DN     &kp C_BRI_UP     &kp C_ASPECT     &kp K_LOCK        &none
           &trans   &kp KP_N6     &kp KP_N7     &kp KP_N8      &kp KP_N9     &kp KP_N0      &kp LEFT        &kp DOWN        &kp UP           &kp RIGHT        &trans           &trans
-          &trans   &mt RPAR LPAR &mt RBRC LBRC &mt RBKT LBKT  &mt GT LT     &trans         &kp HOME        &kp PG_DOWN     &kp PG_UP        &kp END          &trans           &trans
+          &trans   &trans &trans &trans  &trans     &trans         &trans        &trans     &trans        &trans          &trans           &trans
                                                &trans         &trans        &trans         &trans          &trans          &trans
                         >;
                 };
