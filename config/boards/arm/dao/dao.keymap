@@ -13,8 +13,8 @@
 #define RSE 2
 #define ADJ 3
 
-&lt { quick_tap_ms = <200>; };
-&mt { quick_tap_ms = <200>; };
+&lt { quick_tap_ms = <300>; };
+&mt { quick_tap_ms = <300>; };
 
 / {
         keymap {
@@ -22,8 +22,8 @@
 
                 default_layer {
                         bindings = <
-  &none   &kp TAB   &mt N1 Q      &mt N2 W      &mt N3 E      &mt N4 R      &mt N5 T       &mt HASH Y      &mt PRCNT U     &mt PIPE I       &mt AMPS O       &mt GRAVE P      &mt EQUAL UNDER   &none
-          &kp BSPC  &mt N6 A      &mt N7 S      &mt N8 D      &mt N9 F      &mt N0 G       &kp H           &kp J           &kp K            &kp L            &mt SEMI COLON   &kp ESC
+  &none   &kp TAB   &mt N1 Q      &mt N2 W      &mt N3 E      &mt N4 R      &mt N5 T       &mt HASH Y      &mt PRCNT U     &mt PIPE I       &mt AMPS O       &mt GRAVE P      &mt UNDER EQUAL   &none
+          &kp BSPC  &mt N6 A      &mt N7 S      &mt N8 D      &mt N9 F      &mt N0 G       &kp H           &kp J           &kp K            &kp L            &mt COLON SEMI   &kp ESC
           &kp DEL   &mt TILDE Z   &mt AT X      &mt STAR C    &mt MINUS V   &mt PLUS B     &mt CARET N     &mt DLLR M      &mt QMARK COMMA  &mt EXCL DOT     &mt BSLH FSLH    &mt DQT APOS
                                                 &kp LALT      &kp LSHFT     &lt RSE SPACE  &lt LWR RET     &kp LCTRL       &kp LMETA
                         >;
