@@ -9,8 +9,9 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DEF 0
-#define RSE 1
-#define ADJ 2
+#define LWR 1
+#define RSE 2
+#define ADJ 3
 
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
@@ -24,7 +25,15 @@
   &none   &kp TAB   &mt KP_N1 Q   &mt KP_N2 W   &mt KP_N3 E   &mt KP_N4 R   &mt KP_N5 T    &mt HASH Y      &mt PRCNT U     &mt PIPE I       &mt AMPS O       &mt GRAVE P      &mt EQUAL UNDER   &none
           &kp BSPC  &mt KP_N6 A   &mt KP_N7 S   &mt KP_N8 D   &mt KP_N9 F   &mt KP_N0 G    &kp H           &kp J           &kp K            &kp L            &mt SEMI COLON   &kp ESC
           &kp DEL   &mt TILDE Z   &mt AT X      &mt STAR C    &mt MINUS V   &mt PLUS B     &mt CARET N     &mt DLLR M      &mt QMARK COMMA  &mt EXCL DOT     &mt BSLH FSLH    &mt DQT APOS
-                                                &kp LALT      &kp LSHFT     &lt RSE SPACE  &lt LSHFT RET     &kp LCTRL       &kp LMETA
+                                                &kp LALT      &kp LSHFT     &lt RSE SPACE  &lt LWR RET     &kp LCTRL       &kp LMETA
+                        >;
+                };
+                lower_layer {
+                        bindings = <
+  &none   &trans    &kp N1        &kp N2        &kp N3        &kp N4        &kp N5         &kp C_VOL_DN    &kp C_VOL_UP    &kp C_BRI_DN     &kp C_BRI_UP     &kp C_ASPECT     &kp K_LOCK        &none
+          &trans    &kp N6        &kp N7        &kp N8        &kp N9        &kp N0         &kp LEFT        &kp DOWN        &kp UP           &kp RIGHT        &trans           &trans
+          &trans    &mt RPAR LPAR &mt RBRC LBRC &mt RBKT LBKT &mt GT LT     &trans         &kp HOME        &kp PG_DOWN     &kp PG_UP        &kp END          &trans           &trans
+                                               &trans         &trans        &trans         &trans          &trans          &trans
                         >;
                 };
 
