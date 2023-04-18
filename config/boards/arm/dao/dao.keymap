@@ -15,16 +15,26 @@
 
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
-&ht_tp { quick_tap_ms = <200>; };
 / {
+        behaviors {
+        ht: my_hold_tap {
+                        compatible = "zmk,behavior-hold-tap";
+                        label = "MY_HOLD_TAP";
+                        #binding-cells = <2>;
+                        flavor = "tap-preferred";
+                        tapping-term-ms = <200>;
+                                bindings = <&kp>, <&kp>;
+                                hold-trigger-key-positions = <1>;    // <---[[the W key]]
+                };
+        };
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
                         bindings = <
-  &none   &kp TAB   &ht_tp N1 Q      &ht_tp N2 W      &ht_tp N3 E      &ht_tp N4 R      &ht_tp N5 T       &ht_tp HASH Y      &ht_tp PRCNT U     &ht_tp PIPE I       &ht_tp AMPS O       &ht_tp GRAVE P      &ht_tp UNDER EQUAL   &none
-          &kp BSPC  &ht_tp N6 A      &ht_tp N7 S      &ht_tp N8 D      &ht_tp N9 F      &ht_tp N0 G       &kp H           &kp J           &kp K            &kp L            &ht_tp COLON SEMI   &kp ESC
-          &kp DEL   &ht_tp TILDE Z   &ht_tp AT X      &ht_tp STAR C    &ht_tp MINUS V   &ht_tp PLUS B     &ht_tp CARET N     &ht_tp DLLR M      &ht_tp QMARK COMMA  &ht_tp EXCL DOT     &ht_tp BSLH FSLH    &ht_tp DQT APOS
+  &none   &kp TAB   &ht N1 Q      &ht N2 W      &ht N3 E      &ht N4 R      &ht N5 T       &ht HASH Y      &ht PRCNT U     &ht PIPE I       &ht AMPS O       &ht GRAVE P      &ht UNDER EQUAL   &none
+          &kp BSPC  &ht N6 A      &ht N7 S      &ht N8 D      &ht N9 F      &ht N0 G       &kp H           &kp J           &kp K            &kp L            &ht COLON SEMI   &kp ESC
+          &kp DEL   &ht TILDE Z   &ht AT X      &ht STAR C    &ht MINUS V   &ht PLUS B     &ht CARET N     &ht DLLR M      &ht QMARK COMMA  &ht EXCL DOT     &ht BSLH FSLH    &ht DQT APOS
                                                 &kp LALT      &kp LSHFT     &lt RSE SPACE  &lt LWR RET     &kp LCTRL       &kp LMETA
                         >;
                 };
@@ -32,7 +42,7 @@
                         bindings = <
   &none   &trans    &kp N1        &kp N2        &kp N3        &kp N4        &kp N5         &kp C_VOL_DN    &kp C_VOL_UP    &kp C_BRI_DN     &kp C_BRI_UP     &kp C_ASPECT     &kp K_LOCK        &none
           &trans    &kp N6        &kp N7        &kp N8        &kp N9        &kp N0         &kp LEFT        &kp DOWN        &kp UP           &kp RIGHT        &trans           &trans
-          &trans    &ht_tp RPAR LPAR &ht_tp RBRC LBRC &ht_tp RBKT LBKT &ht_tp GT LT     &trans         &kp HOME        &kp PG_DN       &kp PG_UP        &kp END          &trans           &trans
+          &trans    &ht RPAR LPAR &ht RBRC LBRC &ht RBKT LBKT &ht GT LT     &trans         &kp HOME        &kp PG_DN       &kp PG_UP        &kp END          &trans           &trans
                                                &trans         &trans        &trans         &trans          &trans          &trans
                         >;
                 };
