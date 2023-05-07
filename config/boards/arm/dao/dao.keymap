@@ -31,8 +31,8 @@
 
                 default_layer {
                         bindings = <
-  &none   &kp DEL      &ht N1 Q      &ht N2 W      &ht N3 E      &ht N4 R      &ht N5 T       &ht HASH Y      &ht PRCNT U     &ht APOS I       &ht DQT O        &ht GRAVE P      &ht UNDER EQUAL   &none
-          &kp BSPC     &ht N6 A      &ht N7 S      &ht N8 D      &ht N9 F      &ht N0 G       &kp H           &kp J           &kp K            &kp L            &ht COLON SEMI   &ht AMPS PIPE
+  &none   &kp DEL      &kp Q         &kp W         &kp E         &kp R         &kp T          &ht HASH Y      &ht PRCNT U     &ht APOS I       &ht DQT O        &ht GRAVE P      &ht UNDER EQUAL   &none
+          &kp BSPC     &kp A         &kp S         &kp D         &kp F         &kp G          &kp H           &kp J           &kp K            &kp L            &ht COLON SEMI   &ht AMPS PIPE
           &kp LCTRL    &ht TILDE Z   &ht AT X      &ht STAR C    &ht MINUS V   &ht PLUS B     &ht CARET N     &ht DLLR M      &ht QMARK COMMA  &ht EXCL DOT     &ht BSLH FSLH    &kp LSHFT
                                                 &kp LALT      &mt LSHFT TAB &lt RSE SPACE  &lt LWR RET     &mt LCTRL ESC   &kp LMETA
                         >;
