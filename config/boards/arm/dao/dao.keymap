@@ -49,9 +49,9 @@
                 raise_layer {
                         bindings = <
   &none   &trans       &kp F1        &kp F2        &kp F3        &kp F4        &kp F5         &trans          &trans          &trans           &trans           &trans           &trans            &none
-          &trans       &kp F6        &kp F7        &kp F8        &kp F9        &kp F10        &kp LC(LA(F21)) &kp LC(LA(F22)) &kp LC(LA(F23))  &kp LC(LA(F24))  &trans           &trans
-          &trans       &kp F11       &kp F12       &trans        &trans        &trans         &kp LC(LA(F17)) &kp LC(LA(F18)) &kp LC(LA(F19))  &kp LC(LA(F20))  &trans           &trans
-                                                   &trans        &trans        &trans         &kp LC(LA(F14)) &kp LC(LA(F15)) &kp LC(LA(F16))
+          &trans       &kp F6        &kp F7        &kp F8        &kp F9        &kp F10        &kp F21         &kp F22         &kp F23          &kp F24          &trans           &trans
+          &trans       &kp F11       &kp F12       &trans        &trans        &trans         &kp F17         &kp F18         &kp F19          &kp F20          &trans           &trans
+                                                   &trans        &trans        &trans         &kp F14         &kp F15         &kp F16
                         >;
                 };
         };
