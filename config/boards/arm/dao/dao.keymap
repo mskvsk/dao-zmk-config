@@ -1,4 +1,3 @@
-
 /*
 *
 * Copyright (c) 2021 Darryl deHaan
@@ -41,7 +40,6 @@
 #define SCROLL_LEFT SCROLL_HOR(-U_MOUSE_SCROLL_MAX)
 #define SCROLL_RIGHT SCROLL_HOR(U_MOUSE_SCROLL_MAX)
 
-
 &mmv {
     time-to-max-speed-ms = <80>;
     acceleration-exponent = <1>;
@@ -54,17 +52,11 @@
 
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
+
+
 / {
+
         behaviors {
-        ht: my_hold_tap {
-                        compatible = "zmk,behavior-hold-tap";
-                        label = "MY_HOLD_TAP";
-                        #binding-cells = <2>;
-                        flavor = "tap-preferred";
-                        tapping-term-ms = <200>;
-                                bindings = <&kp>, <&kp>;
-                                hold-trigger-key-positions = <1>;    // <---[[the W key]]
-                };
         td_mouse: tap_dance_mouse_lock {
                         compatible = "zmk,behavior-tap-dance";
                         label = "TAP_DANCE_MOD_TAP";
@@ -87,56 +79,142 @@
                         tapping-term-ms = <200>;
                                 bindings = <&mo>, <&mkp>;
                 };
-        };
+        up_vol: up_and_volume_inc {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "VOLUME_UP_DOWN";
+                        #binding-cells = <0>;
+                        bindings = <&kp UP>, <&kp C_VOL_UP>;
+                                mods = <MOD_LALT>;
+                                keep-mods = <0>;
+                };
+        down_vol: down_and_volume_dec {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "VOLUME_DOWN_UP";
+                        #binding-cells = <0>;
+                        bindings = <&kp DOWN>, <&kp C_VOL_DN>;
+                                mods = <MOD_LALT>;
+                                keep-mods = <0>;
+                };
+        right_br: right_and_brightness_inc {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "BRIGHTNESS_UP_DOWN";
+                        #binding-cells = <0>;
+                        bindings = <&kp RIGHT>, <&kp C_BRI_UP>;
+                                mods = <MOD_LALT>;
+                                keep-mods = <0>;
+                };
+        left_br: left_and_brightness_dec {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "BRIGHTNESS_DOWN_UP";
+                        #binding-cells = <0>;
+                        bindings = <&kp LEFT>, <&kp C_BRI_DN>;
+                                mods = <MOD_LALT>;
+                                keep-mods = <0>;
+                };
 
+        mup_vol: mouse_up_and_volume_inc {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "VOLUME_UP_MOUSE_DOWN";
+                        #binding-cells = <0>;
+                        bindings = <&mmv MOVE_UP>, <&kp C_VOL_UP>;
+                                mods = <MOD_LALT>;
+                                keep-mods = <0>;
+                };
+        mdown_vol: mouse_down_and_volume_dec {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "VOLUME_DOWN_MOUSE_UP";
+                        #binding-cells = <0>;
+                        bindings = <&mmv MOVE_DOWN>, <&kp C_VOL_DN>;
+                                mods = <MOD_LALT>;
+                                keep-mods = <0>;
+                };
+        mright_br: mouse_right_and_brightness_inc {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "BRIGHTNESS_UP_MOUSE_DOWN";
+                        #binding-cells = <0>;
+                        bindings = <&mmv MOVE_RIGHT>, <&kp C_BRI_UP>;
+                                mods = <MOD_LALT>;
+                                keep-mods = <0>;
+                };
+        mleft_br: mouse_left_and_brightness_dec {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "BRIGHTNESS_DOWN_MOUSE_UP";
+                        #binding-cells = <0>;
+                        bindings = <&mmv MOVE_LEFT>, <&kp C_BRI_DN>;
+                                mods = <MOD_LALT>;
+                                keep-mods = <0>;
+                };
+        comma_qmark: comma_qmark {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "COMMA_QMARK";
+                        #binding-cells = <0>;
+                        bindings = <&kp COMMA>, <&kp QMARK>;
+                                mods = <MOD_LSFT>;
+                                keep-mods = <0>;
+                };
+        dot_excl: dot_excl {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "DOT_EXCL";
+                        #binding-cells = <0>;
+                        bindings = <&kp DOT>, <&kp EXCL>;
+                                mods = <MOD_LSFT>;
+                                keep-mods = <0>;
+                };
+        fslh_bslh: fslh_bslh {
+                        compatible = "zmk,behavior-mod-morph";
+                        label = "FSLH_BSLH";
+                        #binding-cells = <0>;
+                        bindings = <&kp FSLH>, <&kp BSLH>;
+                                mods = <MOD_LSFT>;
+                                keep-mods = <0>;
+                };
+        };
         keymap {
                 compatible = "zmk,keymap";
-
                 default_layer {
 			label = "main";
                         bindings = <
-  &none   &kp UNDER    &kp Q         &kp W         &kp F         &kp P          &kp G          &kp J           &kp L             &kp U            &kp Y              &kp K            &kp EQUAL    &none
-          &kp B        &ht AT A      &ht TILDE R   &ht AMPS S    &ht PIPE T     &kp D          &kp H           &kp N             &kp E            &kp O              &kp I            &kp COLON
-          &kp LCTRL    &kp Z         &kp X         &kp C         &kp V          &none          &td_lock        &kp M             &ht QMARK COMMA  &ht EXCL DOT       &ht BSLH FSLH    &td_mouse
-                                                   &mt LALT TAB  &mt LSHFT BSPC &lt RSE SPACE  &lt LWR RET     &mt LCTRL ESC     &mt LMETA DEL
+    &none &none       &none          &kp W         &kp F         &kp P          &kp G           &kp J           &kp L             &kp U            &kp Y              &none            &none      &none
+          &kp Z       &kp Q          &kp R         &kp S         &kp T          &kp D           &kp H           &kp N             &kp E            &kp O              &kp K            &kp UNDER
+          &kp B       &kp A          &kp X         &kp C         &kp V          &none           &none           &kp M             &comma_qmark     &dot_excl          &kp I            &fslh_bslh
+                                                   &none         &mt RCTRL BSPC &lt RSE SPACE   &lt LWR RET     &mt LSHFT ESC     &none
                         >;
                 };
 		lower_layer {
 			label = "lower";
                         bindings = <
-  &none   &kp HASH     &kp N1        &kp N2        &kp N3        &kp N4         &kp N5         &kp CARET       &ht GRAVE APOS    &kp UP           &kp DQT            &kp PLUS         &kp SEMI     &none
-          &kp PRCNT    &kp N6        &kp N7        &kp N8        &kp N9         &kp N0         &kp DLLR        &kp LEFT          &kp DOWN         &kp RIGHT          &kp MINUS        &kp STAR
-          &trans       &kp LPAR      &kp RPAR      &kp LBRC      &kp RBRC       &trans         &trans          &kp LBKT          &kp RBKT         &kp LT             &kp GT           &trans
-                                                   &trans        &lt LWRX BSPC  &trans         &trans          &trans            &trans           &trans
+    &none &trans      &trans         &kp N2        &kp N3        &kp N4         &kp N5          &kp CARET       &kp APOS          &up_vol          &kp DQT            &trans           &trans      &none
+          &kp SEMI    &kp N1         &kp N7        &kp N8        &kp N9         &kp N0          &kp DLLR        &left_br          &down_vol        &right_br          &kp PLUS         &kp EQUAL
+          &kp COLON   &kp N6         &kp HASH      &kp LPAR      &kp RPAR       &trans          &trans          &kp LBKT          &kp RBKT         &kp PRCNT          &mt LALT MINUS   &kp STAR
+                                                   &trans        &lt LWRX DEL   &kp TAB         &trans          &tog RSE          &trans           &trans
                         >;
                 };
 		lower_layer_x {
 			label = "lower_x";
                         bindings = <
-  &none   &trans       &trans        &trans        &trans        &trans         &trans         &trans          &trans            &kp PG_UP        &trans             &trans           &trans      &none
-          &trans       &trans        &trans        &trans        &trans         &trans         &trans          &kp HOME          &kp PG_DN        &kp END            &trans           &trans
-          &trans       &trans        &trans        &trans        &trans         &trans         &trans          &trans            &trans           &trans             &trans           &trans
-                                                   &trans        &trans         &trans         &trans          &trans            &trans
+    &none &trans      &trans         &trans        &trans        &trans         &trans          &trans          &kp GRAVE         &kp PG_UP        &trans             &trans           &trans      &none
+          &trans      &trans         &kp TILDE     &kp AMPS      &kp PIPE       &trans          &trans          &kp HOME          &kp PG_DN        &kp END            &trans           &trans
+          &trans      &kp AT         &trans        &kp LBRC      &kp RBRC       &trans          &trans          &kp LT            &kp GT           &trans             &trans           &trans
+                                                   &trans        &trans         &trans          &trans          &trans            &trans
                         >;
                 };
                 raise_layer {
 			label = "higher";
                         bindings = <
-  &none   &trans       &kp F1        &kp F2        &kp F3        &kp F4         &kp F5         &trans          &trans            &mmv MOVE_UP     &trans             &kp C_VOL_UP     &kp C_BRI_UP &none
-          &trans       &kp F6        &kp F7        &kp F8        &kp F9         &kp F10        &trans          &mmv MOVE_LEFT    &mmv MOVE_DOWN   &mmv MOVE_RIGHT    &kp C_VOL_DN     &kp C_BRI_DN
-          &trans       &kp F11       &kp F12       &kp F13       &kp F14        &trans         &trans          &trans            &trans           &trans             &trans           &trans
-                                                   &trans        &trans         &trans         &mkp LCLK       &mkp_ht RSEX RCLK &mkp MCLK
+    &none &trans      &trans         &kp F2        &kp F3        &kp F4         &kp F5          &trans          &trans            &mup_vol         &trans             &trans           &trans      &none
+          &trans      &kp F1         &kp F7        &kp F8        &kp F9         &kp F10         &trans          &mleft_br         &mdown_vol       &mright_br         &trans           &trans
+          &trans      &kp F6         &kp F11       &kp F12       &kp F13        &trans          &trans          &trans            &trans           &trans             &kp LALT         &trans
+                                                   &trans        &trans         &trans          &mkp LCLK       &mkp_ht RSEX RCLK &trans
                         > ;
                 };
 		raise_layer_x {
 			label = "higher_x";
                         bindings = <
-  &none   &trans       &trans        &trans        &trans        &trans         &trans         &trans          &trans            &mwh SCROLL_UP   &trans             &trans           &trans       &none
-          &trans       &trans        &trans        &trans        &trans         &trans         &trans          &mwh SCROLL_LEFT  &mwh SCROLL_DOWN &mwh SCROLL_RIGHT  &trans           &trans
-          &trans       &trans        &trans        &trans        &trans         &trans         &trans          &trans            &trans           &trans             &trans           &trans
-                                                   &trans        &trans         &trans         &trans          &trans            &trans
+    &none &trans      &trans         &trans        &trans        &trans         &trans          &trans          &trans            &mwh SCROLL_UP   &trans             &trans           &trans      &none
+          &trans      &trans         &trans        &trans        &trans         &trans          &trans          &mwh SCROLL_LEFT  &mwh SCROLL_DOWN &mwh SCROLL_RIGHT  &trans           &trans
+          &trans      &trans         &trans        &trans        &trans         &trans          &trans          &trans            &trans           &trans             &tog RSE         &kp K_LOCK
+                                                   &trans        &trans         &trans          &trans          &trans            &trans
                         >;
                 };
         };
 };
-
