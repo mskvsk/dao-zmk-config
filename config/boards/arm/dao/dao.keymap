@@ -107,38 +107,6 @@
                                 keep-mods = <0>;
                 };
 
-        mup_vol: mouse_up_and_volume_inc {
-                        compatible = "zmk,behavior-mod-morph";
-                        label = "VOLUME_UP_MOUSE_DOWN";
-                        #binding-cells = <0>;
-                        bindings = <&mmv MOVE_UP>, <&kp C_VOL_UP>;
-                                mods = <MOD_LALT>;
-                                keep-mods = <0>;
-                };
-        mdown_vol: mouse_down_and_volume_dec {
-                        compatible = "zmk,behavior-mod-morph";
-                        label = "VOLUME_DOWN_MOUSE_UP";
-                        #binding-cells = <0>;
-                        bindings = <&mmv MOVE_DOWN>, <&kp C_VOL_DN>;
-                                mods = <MOD_LALT>;
-                                keep-mods = <0>;
-                };
-        mright_br: mouse_right_and_brightness_inc {
-                        compatible = "zmk,behavior-mod-morph";
-                        label = "BRIGHTNESS_UP_MOUSE_DOWN";
-                        #binding-cells = <0>;
-                        bindings = <&mmv MOVE_RIGHT>, <&kp C_BRI_UP>;
-                                mods = <MOD_LALT>;
-                                keep-mods = <0>;
-                };
-        mleft_br: mouse_left_and_brightness_dec {
-                        compatible = "zmk,behavior-mod-morph";
-                        label = "BRIGHTNESS_DOWN_MOUSE_UP";
-                        #binding-cells = <0>;
-                        bindings = <&mmv MOVE_LEFT>, <&kp C_BRI_DN>;
-                                mods = <MOD_LALT>;
-                                keep-mods = <0>;
-                };
         comma_qmark: comma_qmark {
                         compatible = "zmk,behavior-mod-morph";
                         label = "COMMA_QMARK";
@@ -196,8 +164,8 @@
                 raise_layer {
 			label = "higher";
                         bindings = <
-    &none &trans      &trans         &kp F2        &kp F3        &kp F4         &kp F5          &trans          &trans            &mup_vol         &trans             &trans           &trans      &none
-          &trans      &kp F1         &kp F7        &kp F8        &kp F9         &kp F10         &trans          &mleft_br         &mdown_vol       &mright_br         &trans           &trans
+    &none &trans      &trans         &kp F2        &kp F3        &kp F4         &kp F5          &trans          &trans           &trans         &trans             &trans           &trans      &none
+          &trans      &kp F1         &kp F7        &kp F8        &kp F9         &kp F10         &trans          &trans         &trans       &trans         &trans           &trans
           &trans      &kp F6         &kp F11       &kp F12       &kp F13        &trans          &trans          &trans            &trans           &trans             &kp LALT         &trans
                                                    &trans        &trans         &trans          &mkp LCLK       &mkp_ht RSEX RCLK &trans
                         > ;
@@ -205,8 +173,8 @@
 		raise_layer_x {
 			label = "higher_x";
                         bindings = <
-    &none &trans      &trans         &trans        &trans        &trans         &trans          &trans          &trans            &msc SCROLL_UP   &trans             &trans           &trans      &none
-          &trans      &trans         &trans        &trans        &trans         &trans          &trans          &msc SCROLL_LEFT  &msc SCROLL_DOWN &msc SCROLL_RIGHT  &trans           &trans
+    &none &trans      &trans         &trans        &trans        &trans         &trans          &trans          &trans            &trans   &trans             &trans           &trans      &none
+          &trans      &trans         &trans        &trans        &trans         &trans          &trans          &trans  &trans &trans  &trans           &trans
           &trans      &trans         &trans        &trans        &trans         &trans          &trans          &trans            &trans           &trans             &tog RSE         &kp K_LOCK
                                                    &trans        &trans         &trans          &trans          &trans            &trans
                         >;
