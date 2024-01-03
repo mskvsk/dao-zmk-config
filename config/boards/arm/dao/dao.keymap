@@ -175,7 +175,7 @@
 			label = "main";
                         bindings = <
     &none &none       &none          &kp W         &kp F         &kp P          &kp G           &kp J           &kp L             &kp U            &kp Y              &none            &none      &none
-          &kp Z       &kp Q          &kp R         &kp S         &kp T          &kp D           &kp H           &kp N             &kp E            &kp O              &kp K            &kp UNDER
+          &kp Z       &kp Q          &kp R         &kp S         &kp T          &kp D           &kp H           &kp N             &kp E            &kp O              &kp K            &bt BT_CLR
           &kp B       &kp A          &kp X         &kp C         &kp V          &none           &none           &kp M             &comma_qmark     &dot_excl          &kp I            &fslh_bslh
                                                    &none         &mt RCTRL BSPC &lt RSE SPACE   &lt LWR RET     &mt LSHFT ESC     &none
                         >;
