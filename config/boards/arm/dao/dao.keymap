@@ -45,11 +45,6 @@
     acceleration-exponent = <1>;
 };
 
-&mwh {
-    time-to-max-speed-ms = <0>;
-    acceleration-exponent = <1>;
-};
-
 &lt { quick_tap_ms = <200>; };
 &mt { quick_tap_ms = <200>; };
 
@@ -210,8 +205,8 @@
 		raise_layer_x {
 			label = "higher_x";
                         bindings = <
-    &none &trans      &trans         &trans        &trans        &trans         &trans          &trans          &trans            &mwh SCROLL_UP   &trans             &trans           &trans      &none
-          &trans      &trans         &trans        &trans        &trans         &trans          &trans          &mwh SCROLL_LEFT  &mwh SCROLL_DOWN &mwh SCROLL_RIGHT  &trans           &trans
+    &none &trans      &trans         &trans        &trans        &trans         &trans          &trans          &trans            &msc SCROLL_UP   &trans             &trans           &trans      &none
+          &trans      &trans         &trans        &trans        &trans         &trans          &trans          &msc SCROLL_LEFT  &msc SCROLL_DOWN &msc SCROLL_RIGHT  &trans           &trans
           &trans      &trans         &trans        &trans        &trans         &trans          &trans          &trans            &trans           &trans             &tog RSE         &kp K_LOCK
                                                    &trans        &trans         &trans          &trans          &trans            &trans
                         >;
